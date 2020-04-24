@@ -1,0 +1,60 @@
+This is an example program in AEROSPL. It is a simple, text-based calculator program.
+
+Note: Just as in BASIC on many older computer systems, you must label lines with their line number, this is so the 'goto'
+statement will work properly.
+
+Example Program: Calculator
+
+
+1 /#  This is a single line comment #/
+2 /##  This
+3 Is
+4 A
+5 Multi
+6 Line
+7 Comment ##/
+8 init main() {
+9  output::txt("Calculator Program\n");
+10  break::line
+11  init var(title="firstnumber", type="input-int", prompt("Enter your first number: ")\n);
+12  init var(title="secondnumber", type="input-int", prompt("Enter your second number: ")\n);
+13  break::line
+14  output::txt("Now you must choose an operator: "\n)
+15  output::txt("1: Addition +"\n);
+16  output::txt("2: Subtraction -"\n);
+17  output::txt("3: Multiplication * or X"\n);
+18  output::txt("4: Division / or %"\n);
+19  break::line
+20  init var(title="operator", type="input-int,char,sym", prompt("Enter your operator choice: ")\n);
+21  for value("operator") == ["1", "addition", "ADDITION", "+"] then () {
+22    output::bool(firstnumber+secondnumber);
+23    goto 11;
+24  }
+25  for value("operator") == ["2", "subtraction", "SUBTRACTION", "+"] then () {
+26    output::bool(firstnumber-secondnumber);
+27    goto 11;
+28  }
+29  for value("operator") == ["3", "multiplication", "MULTIPLICATION", "*", "x", "X"] then () {
+30    output::bool(firstnumber*secondnumber);
+31    goto 11;
+32  }
+33  for value("operator") == ["4", "division", "DIVISION", "/", "\", "%"] then () {
+34    output::bool(firstnumber/secondnumber);
+35    goto 11;
+36  }
+37  else value("operator") then() {
+38    output::txt("ERROR: INCORRECT OPERATOR CHARACTER");
+39    goto 20;
+40  }
+41  for value("operator","firstnumber","secondnumber") == ["exit", "EXIT", "shutdown", "SHUTDOWN", "ext", "EXT", "shtd", "SHTD"] then () {
+42    return 0;
+43  }
+44 }
+
+
+This program takes a first and second integer from the user, and then asks the user for an operator choice. The user makes
+an operator choice based on the list given, the calculation is done, with the answer being printed, and the program looping
+back to the user entering his or her first integer. This program would loop forever, or untill the hardware is turned off, so
+at the end of the program (lines 41 through 43) there is an exit function, so that the user can exit/shutdown the program.
+This function sets it up so that if at any time, the user enters an exit command (any that is inside of the list in line 41),
+the program will shutdown.
