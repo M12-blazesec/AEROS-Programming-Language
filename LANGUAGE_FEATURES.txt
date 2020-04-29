@@ -1,0 +1,31 @@
+Here Lies ALL OF THE FEATURES OF THE AEROS Programming Language (AEROSPL)
+
+Comments:
+
+/# ... #/            '/#' denotes the beginning of a single-line comment whilst '#/' denotes the end of a single-line comment
+                     when a program is compiled and ran, these are essentially ignored by the program, they have no effect on
+                     it, exept the program having more lines of code.
+/## ... ##/          '/##' denotes the beginning of a multi-line comment whilst '##/ denotes the end of a multi-line comment
+                     when a program is compiled and ran, these are essentially ignored by the program, they have no effect on
+                     it, exept the program having more lines of code.
+                    
+Outputs:
+
+output::txt("");     'output' denotes that there is going to be an output, the '::' denotes that there is a specific type
+                     of output that is about to be defined 'txt' is the specific type of output. '("' Denotes the start of
+                     what is to be outputted, anything inside of it will be printed as text on the screen of the user, where
+                     '")' denotes the end of the contents to be outputted, and ';' denotes the end of the line.
+output::int("");     'output' denotes that there is going to be an output, the '::' denotes that there is a specific type
+                     of output that is about to be defined 'int' is the specific type of output. '("' Denotes the start of 
+                     what is to be outputted, anything inside of it will be printed as text on the screen of the user, where
+                     '")' denotes the end of the contents to be outputted, and ';' denotes the end of the line.
+output::var("");     'output' denotes that there is going to be an output, the '::' denotes that there is a specific type
+                     of output that is about to be defined 'var' is the specific type of output. '("' Denotes the start of 
+                     what is to be outputted, anything inside of it will be printed as text on the screen of the user, where
+                     '")' denotes the end of the contents to be outputted, and ';' denotes the end of the line.                  
+                     
+Specific Types of Outputs:
+
+txt                  The 'txt' output type as seen in 'output::txt("");" denotes that the contents of the string will be of
+                     a text variety. 
+
